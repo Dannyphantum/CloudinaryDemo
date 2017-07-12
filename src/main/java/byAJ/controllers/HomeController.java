@@ -97,6 +97,9 @@ public class HomeController {
             model.addAttribute("imageurl", uploadResult.get("url"));
             String filename = uploadResult.get("public_id").toString() + "." + uploadResult.get("format").toString();
             model.addAttribute("sizedimageurl", cloudc.createUrl(filename,100,150, "fit"));
+            model.addAttribute("cropped4040sizedimageurl", cloudc.createCroppedSepiaUrl(filename,100,150, "fit"));
+            model.addAttribute("uncroppedimageurl", cloudc.createUncroppedImageUrl(filename,100,150, "fit"));
+            model.addAttribute("fixedheightimageurl", cloudc.createFixedHeightUrl(filename,100,150, "fit"));
         } catch (IOException e){
             e.printStackTrace();
             model.addAttribute("message", "Sorry I can't upload that!");

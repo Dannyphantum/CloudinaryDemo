@@ -12,7 +12,7 @@
     <body>
         <th:block th:replace="base :: nav"></th:block>
 
-        <div class="container" >
+        <div class="container">
             <br /><br />
             <h1>Spring Boot file upload example</h1>
 
@@ -21,17 +21,14 @@
                 <input type="submit" value="Submit" />
             </form>
             <div th:if="${message}">
-                <h2 th:text="${message}"></h2><br/><br/>
+                <h2 th:text="${message}"/><br/><br/>
             </div>
             <div th:if="${imageurl} != null">
                 <img th:src="${imageurl}" />
                 <hr />
-                <div class="col-md-4"></div><div class="img" th:utext="${sizedimageurl}"></div>
-                <div class="col-md-4"></div><div class="img" th:utext="${cropped4040sizedimageurl}"></div>
-                <div class="col-sm-4 col-md-4"></div><div class="img" th:utext="${uncroppedimageurl}"></div>
-                <div class="col-sm-4 col-md-4"></div><div class="img" th:utext="${fixedheightimageurl}"></div>
+                <div th:utext="${sizedimageurl}">
 
-                
+                </div>
             </div>
         </div><!-- /.container -->
 

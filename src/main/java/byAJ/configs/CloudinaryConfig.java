@@ -35,6 +35,24 @@ public class CloudinaryConfig {
 
     public String createUrl(String name, int width, int height, String action){
         return cloudinary.url()
+                .transformation(new Transformation().width(240).height(240).border("2px_solid_black").crop(action))
+                .imageTag(name);
+    }
+    
+    public String createCroppedSepiaUrl(String name, int width, int height, String action){
+        return cloudinary.url()
+                .transformation(new Transformation().width(width).height(height).border("2px_solid_black").crop(action).effect("sepia"))
+                .imageTag(name);
+    }
+    
+    public String createUncroppedImageUrl(String name, int width, int height, String action){
+        return cloudinary.url()
+                .transformation(new Transformation().width(width).height(height).border("2px_solid_black"))
+                .imageTag(name);
+    }
+    
+    public String createFixedHeightUrl(String name, int width, int height, String action){
+        return cloudinary.url()
                 .transformation(new Transformation().width(width).height(height).border("2px_solid_black").crop(action))
                 .imageTag(name);
     }
