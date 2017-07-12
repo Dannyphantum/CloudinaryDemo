@@ -2,6 +2,7 @@ package byAJ.configs;
 
 import byAJ.models.Role;
 import byAJ.models.User;
+import byAJ.repositories.PhotoRepository;
 import byAJ.repositories.RoleRepository;
 import byAJ.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import java.util.Arrays;
 @Component
 public class DataLoader implements CommandLineRunner{
 
-    @Autowired
+    @Autowired 
     UserRepository userRepository;
 
     @Autowired
@@ -22,6 +23,9 @@ public class DataLoader implements CommandLineRunner{
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    
+    @Autowired
+    PhotoRepository photoRepository;
     
     @Override
     public void run(String... strings) throws Exception {
